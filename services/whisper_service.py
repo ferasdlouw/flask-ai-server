@@ -1,7 +1,11 @@
 from flask import Blueprint, request, jsonify
-import whisper, os, tempfile
+import whisper
+import os
+import tempfile
 
 transcribe_audio_route = Blueprint('whisper', __name__)
+
+# تحميل موديل Whisper (ممكن tiny أو base حسب رغبتك)
 model = whisper.load_model("tiny")
 
 @transcribe_audio_route.route('/transcribe', methods=['POST'])
