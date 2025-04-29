@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from services.emotion_service import analyze_emotion_route
 from services.whisper_service import transcribe_audio_route
 
 app = Flask(__name__)
 
+# تسجيل الراوترات
 app.register_blueprint(analyze_emotion_route)
 app.register_blueprint(transcribe_audio_route)
 
